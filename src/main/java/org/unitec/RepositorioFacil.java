@@ -5,17 +5,14 @@
  */
 package org.unitec;
 
-import org.springframework.context.annotation.Configuration;
+import java.io.Serializable;
+import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author campitos
  */
-@Configuration
-public class ServicioConversion {
-    
-    Conversion hacerConversion(){
-        return new CentimetrosAPulgadas();
-    }
-    
+public interface RepositorioFacil extends CrudRepository<Facil, Long>{
+  List<Facil>  findByCuerpo(String cuerpo);
 }

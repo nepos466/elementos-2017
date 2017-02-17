@@ -5,17 +5,16 @@
  */
 package org.unitec;
 
-import org.springframework.context.annotation.Configuration;
-
 /**
  *
  * @author campitos
  */
-@Configuration
-public class ServicioConversion {
-    
-    Conversion hacerConversion(){
-        return new CentimetrosAPulgadas();
+public class CentimetrosAPulgadas implements Conversion{
+
+    @Override
+    public float convertir(float valor) {
+   float pulgadas=valor/2.54f;
+   return pulgadas;
     }
     
 }
