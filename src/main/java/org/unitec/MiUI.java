@@ -61,16 +61,14 @@ public class MiUI extends UI{
   
   boton1.addClickListener(cliqueo->{
       
-      Cliente c1=new Cliente("juan", "juan@gmail.com");
+     // Cliente c1=new Cliente("juan", "juan@gmail.com");
 
-     repoCliente.save(c1);
-     repoDireccion
-             .save(new Direccion(c1, "calle 1","ecatepunk", 333l));
+     //repoCliente.save(c1);
+    // repoDireccion.save(new Direccion(c1, "calle 1","ecatepunk", 333l));
   
 
-Integer.parseInt( t1.getValue());
-      l2.setValue(""+
-              repoDireccion.findOne(2l).getCliente().getEmail());
+long miId=Integer.parseInt( t1.getValue());
+      l2.setValue(" Minucipio "+ repoDireccion.findOne(miId).getMunicipio()+" Email:"+repoDireccion.findOne(miId).getCliente().getEmail());
   });
   //Indicamos al metodo init que ajuste su contenido al del layout
    setContent(layout);
